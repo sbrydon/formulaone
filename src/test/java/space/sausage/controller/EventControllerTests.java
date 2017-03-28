@@ -29,8 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SuppressWarnings({"CanBeFinal", "unused"})
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Application.class)
-@WebAppConfiguration
+@SpringBootTest
 public class EventControllerTests {
     private final MediaType jsonContentType = new MediaType(
             MediaType.APPLICATION_JSON.getType(),
