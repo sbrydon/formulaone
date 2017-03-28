@@ -8,4 +8,4 @@ Example requests:
 
 * `GET /events/2017/races/2` - returns a single event
 
-See `application.properties` for MongoDB settings
+The database is automatically seeded with 2017 events. See `application.properties` for connection settings
