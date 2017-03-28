@@ -8,6 +8,6 @@ Example requests:
 
 * `GET /events/2017/races/2` - returns a single event
 
-The database is automatically seeded events from `events.json`
+The database is automatically created and seeded with `events.json`
 
 See `application.properties` for connection settings
