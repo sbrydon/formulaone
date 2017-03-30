@@ -31,7 +31,7 @@ class DbInitialiser {
         this.mongo = mongo;
     }
 
-    @EventListener(value = ContextRefreshedEvent.class)
+    @EventListener(ContextRefreshedEvent.class)
     void onContextRefreshed() {
         if (mongo.collectionExists(Event.class)) {
             return;
