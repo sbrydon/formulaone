@@ -3,6 +3,7 @@ package space.sausage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -17,6 +18,7 @@ import java.util.List;
  * An initialiser for seeding the database
  */
 @Component
+@Profile("production")
 class DbInitialiser {
     private static final Logger logger = LoggerFactory.getLogger(DbInitialiser.class);
 
@@ -29,7 +31,7 @@ class DbInitialiser {
         this.mongo = mongo;
     }
 
-    @EventListener(ContextRefreshedEvent.class)
+    @EventListener(value = ContextRefreshedEvent.class)
     void onContextRefreshed() {
         if (mongo.collectionExists(Event.class)) {
             return;
